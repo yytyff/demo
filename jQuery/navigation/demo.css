@@ -1,0 +1,47 @@
+ul,li{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		a{
+			color:#333;
+			text-decoration: none;
+		}
+		.container{
+			background:#c7171e;
+			width: 200px;
+		}
+		.container .jewelry{
+			position: relative;
+			display: block;
+			color: #fff;
+			font-size:14px;
+			margin:0 10px;
+			padding: 10px;
+			border-bottom: 1px dotted #de272e;
+		}
+		.container .title{
+			color: #fff;
+		}
+		li >span{
+			position: absolute;
+			display: inline-block;
+			right:10px;
+		}
+		.container .category{
+			position: absolute;
+			top:0;
+			left: 200px;
+			background: #fff;
+			border:1px solid #ccc;
+			width: 210px;
+			display: none;
+		}
+		.category li{
+			width: 55px;
+			float:left;
+			padding: 10px 20px;
+		}
+		.category li>a {
+			font-size: 12px;
+        }
