@@ -70,5 +70,17 @@
 		</li>
 	</ul>
 </div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.container .jewelry').on('mouseover',function(){
+		    $('.category').css('display','none'); 
+		    $(this).find('.category').css('display','block');
+		});
+
+		$('.container .jewelry').on('mouseleave',function(){
+		    $(this).find('.category').css('display','none');
+		});  
+});  
   </body>
 </html>
