@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>load-more</title>
+<meta charset="utf-8">
+<style>
+   *{
+    margin: 0;
+    padding: 0;
+   }
+  .load{
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: 1px solid red;
+    border-radius: 4px;
+    color: red;
+    text-align: center;
+    line-height: 50px;
+    margin: 10px auto;
+    text-decoration: none;
+  }
+  ul{
+    list-style: none;
+  }
+  ul li{
+    border: 1px solid #ccc;
+    margin: 8px;
+    padding:8px;
+  }
+  .hover{
+    background: green;
+    cursor: pointer;
+    color: white;
+  }
+  .load img{
+    padding: 10px 0;
+  }
+
+</style>
+</head>
+<body>
+
+<ul class="lists">
+  <li>news1</li>
+  <li>news2</li>
+</ul>
+<a class="load" href="javascript:void(0)">load more</a>
+
+<script src="./jquery-3.2.1.min.js"></script>
+<script>
+var pageIndex=3
+var isDataArv=true
+$('.load').on('click', function(){
+  if(!isDataArv){
+      return;
+  }
+  $.get('/loadMore', {
+    index: pageIndex,
+    length: 6
+  }).done(function(result){
+      pageIndex+=6
+      isDataArv=true
+      $('.load').text('load more')
+      render(result)
+    }).fail(function(){
+      console.log('error')
+    })
+  isDataArv=false
+  $(this).html("<img src='http://www.loadinggif.com/images/image-selection/3.gif'>")
+})
+
+$('.lists').on('mouseover', 'li', function(){
+  $(this).addClass('hover')
+})
+$('.lists').on('mouseout', 'li', function(){
+  $(this).removeClass('hover')
+})
+
+function render(news){
+  $.each(news, function(index, value){
+    $('.lists').append('<li>'+value+'</li>')
+  })
+}
+</script>
+</body>
+</html>
+
+// 服务端 router.js
+
+app.get('/loadMore', function(req,res){
+	var curIdx = req.query.index
+	var len = req.query.length
+	var data =[]
+	for(var i =0; i<len; i++){
+		data.push('news'+(parseInt(curIdx) +i))
+	}
+	setTimeout(function(){
+		res.send(data);
+	},1000)
+	//res.send(data);
+});
+
+
+
