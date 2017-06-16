@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>演示</title>
+  <style>
+    .btn{
+  margin-left:50px;
+  margin-top:50px;
+  width:200px;
+  height:100px;
+  border:1px solid #ccc;
+  background-color:#ccc;
+  border-radius:3px;
+}
+
+.vertical{
+  position:fixed;
+  margin-top:50px;
+  border:1px solid #ccc;
+  width:200px;
+  height:50px;
+}
+
+.background{
+  width:200px;
+  height:100px;
+  border:1px solid #ccc;
+  margin-top:150px;
+  background-color:#ccc;
+}
+form{
+  margin-top:50px;
+}
+input{
+  padding:5px;
+  border:1px solid red;
+}
+#sports{
+  margin-top:20px;
+}
+.gg{
+  height:5000px;
+}
+  </style>
+</head>
+<body>
+<div class="btn">点我变色</div>
+ <div class="vertical">垂直滚动的距离是：      <span></span>px</div>
+  <div class="background">我的背景色会变</div>
+  <form action="">
+    <input type="text" name ="name" placeholder ="点我输入内容">
+    <br>
+    <select name="" id="sports">
+      <option value="yumaoqiu">羽毛球</option>
+      <option value="足球">足球</option>
+      <option value="篮球">篮球</option>
+      <option value="跑步">跑步</option>
+      <option value="游泳">游泳</option>
+    </select>
+    <p class="hobby">你喜欢的运动是：<span></span></p>
+  </form>
+  <div class="gg"></div>
+<script>
+  $('.btn').on('click',function(){
+	$(this).css({'background-color':'red'});
+	setTimeout(function(){
+		$('.btn').css({'background-color':'blue'});
+	},1000);
+	
+});
+
+$(window).on('scroll',function(){
+	$('.vertical>span').text($(this).scrollTop());
+});
+
+$('.background').on('mouseenter',function(){
+  $(this).css({backgroundColor:'red'})
+}).on('mouseleave',function(){
+  $(this).css({backgroundColor:'#fff'})
+})
+
+$('input').on('focus',function(){
+  $(this).css({borderColor:'blue'})
+}).on('keyup',function(){
+  $(this).val($(this).val().toUpperCase())
+  cosole.log($(this).val())
+}).on('blur',function(){
+  $(this).css({borderColor:'red'})
+})
+
+$('select').on('change',function(){
+  $('.hobby span').text($('select>option:selected').val())
+})
+
+</script>  
+
+</body>
+</html>
