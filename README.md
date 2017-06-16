@@ -3,3 +3,4 @@
 ### [task2:Tab](https://yytyff.github.io/demo/jQuery/navigation/tab/index.html)
 ### [task3:代理](https://yytyff.github.io/demo/jQuery/navigation/agency/index.html)
 ### [task4:滑动](https://yytyff.github.io/demo/jQuery/navigation/slide/index.html)
+### [task5:演示](https://yytyff.github.io/demo/jQuery/navigation/small-demo/index.html)
