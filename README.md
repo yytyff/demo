@@ -5,3 +5,4 @@
 ### [task4:滑动](https://yytyff.github.io/demo/jQuery/navigation/slide/index.html)
 ### [task5:演示](https://yytyff.github.io/demo/jQuery/navigation/small-demo/index.html)
 ### [task6:懒加载](https://yytyff.github.io/demo/jQuery/navigation/lazyload/index.html)
+### [task7:轮播](https://yytyff.github.io/demo/jQuery/navigation/carousel/index.html)
