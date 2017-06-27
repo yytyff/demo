@@ -6,3 +6,4 @@
 ### [task5:演示](https://yytyff.github.io/demo/jQuery/navigation/small-demo/index.html)
 ### [task6:懒加载](https://yytyff.github.io/demo/jQuery/navigation/lazyload/index.html)
 ### [task7:轮播](https://yytyff.github.io/demo/jQuery/navigation/carousel/index.html)
+### [task8：瀑布流](http://js.jirengu.com/ginepobeme/1)
